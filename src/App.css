@@ -1,0 +1,238 @@
+body {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 14px;
+}
+.stat-group {
+  border-spacing: 5px;
+  border-collapse: separate;
+}
+.stat-group a {
+  text-decoration: none;
+}
+.stat-display {
+  margin-right: 0.5em;
+  color: #007bff;
+  background-color: transparent;
+  background-image: none;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  display: table-cell;
+  vertical-align: middle;
+  border: 1px solid #dfe2e5;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+}
+.stat {
+  padding-left: 0.3em;
+  padding-right: 0.39em;
+  color: black;
+}
+
+
+
+.rows {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+}
+.colours .rows {
+  /*--code-pen-inspired (begin)-----------------*/
+  padding: 10px;
+  border: 2px solid red;
+  /*--code-pen-inspired (end)-----------------*/
+}
+
+.header {
+  flex: 1 0 auto;
+  background-color: #eee;
+  display: flex;
+  flex: 0 0 auto;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+.colours .header {
+  /*--code-pen-inspired (begin)-----------------*/
+  margin-bottom: 10px;
+  border: 2px solid magenta;
+  /* height: 140px; */
+  padding: 10px;
+  /*--code-pen-inspired (end)-----------------*/
+
+}
+
+.header .icon {
+  flex: 0 1 50px;
+}
+.colours .header .icon {
+  /*--code-pen-inspired (begin)-----------------*/
+  border: 2px solid #FFD600;
+  margin-right: 10px;
+  /*--code-pen-inspired (end)-----------------*/
+}
+
+.header .search-bar {
+  display: inline-block;
+  flex: 0 1 250px;
+}
+.header .search-bar .input-group {
+  flex: 1 0;
+}
+.colours .header .search-bar {
+  /*--code-pen-inspired (begin)-----------------*/
+  border: 2px solid #1E88E5 !important;
+  margin-right: 10px;
+  /*--code-pen-inspired (end)-----------------*/
+}
+.header .search-bar .input-group-append button {
+  border: 1px solid #ced4da;
+}
+
+.header .spacer {
+  flex: 1 1 50px;
+}
+.colours .header .spacer {
+  /*--code-pen-inspired (begin)-----------------*/
+  border: 2px solid green !important;
+  margin-right: 10px;
+  /*--code-pen-inspired (end)-----------------*/
+}
+
+.header .limits {
+  display: inline-block;
+  flex: 0 0 100px;
+  text-align: right;
+}
+.colours .header .limits {
+  /*--code-pen-inspired (begin)-----------------*/
+  border: 2px solid #F57F17;
+  /*--code-pen-inspired (end)-----------------*/
+}
+
+.popover {
+  max-width: 450px;
+}
+.popover .popover-content {
+  margin-bottom: 1em;
+}
+.popover .limits.expired {
+  background-color: red;
+  color: white;
+}
+.popover table.limit-data {
+  border-collapse: collapse;
+}
+
+.popover table.limit-data td {
+  border-bottom: 1px solid #ccc;
+  padding: 0.25em;
+}
+.popover table.limit-data tr:last-child td {
+  border-bottom-width: 0;
+}
+
+.popover table.limit-data td:first-child {
+  padding-right: 0.5em;
+  font-weight: bold;
+  text-align: right;
+}
+
+.header .limits.compact {
+  cursor: pointer;
+}
+.header .limits.compact .sep {
+  margin: 0.25em;
+}
+
+.colours .header .limits {
+  /*--code-pen-inspired (begin)-----------------*/
+  border: 2px solid #F57F17;
+  /*--code-pen-inspired (end)-----------------*/
+}
+
+.page-container {
+  display: flex;
+  flex: 1 1 auto;
+}
+.colours .page-container {
+  /*--code-pen-inspired (begin)-----------------*/
+  border: 2px solid gold;
+  padding: 10px;
+  /*--code-pen-inspired (end)-----------------*/
+}
+
+.sidebar-list {
+  width: 30vw;
+  min-width: 250px;
+  max-width: 350px;
+  overflow: auto;
+  font-size: 14px;
+  flex: 1;
+  /*border: 2px solid red;*/
+}
+.colours .sidebar-list {
+  /*--code-pen-inspired (begin)-----------------*/
+  border: 2px solid green;
+  padding: 10px;
+  margin-right: 10px;
+ /*--code-pen-inspired (end)-----------------*/
+}
+.sidebar-list .no-results {
+  margin: 1em;
+}
+
+.sidebar-list-item,
+.sidebar-list-item:hover,
+.sidebar-list-item:visited,
+.sidebar-list-item:active,
+.sidebar-list-item:link
+ {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding: 10px 10px;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: -1px;
+  display: block;
+  text-decoration: none;
+  color: #495057;
+}
+.sidebar-list-item:hover {
+  background-color: #1E88E5;
+  color: #fff;
+}
+
+.sidebar-list-item.active {
+  background-color: #1E88E5;
+  color: #fff;
+}
+
+.detail-view {
+  flex: 1;
+  overflow: auto;
+  padding: 1em;
+}
+.colours .detail-view {
+  /*--code-pen-inspired (begin)-----------------*/
+  border: 2px solid cyan;
+  padding: 10px;
+  /*--code-pen-inspired (end)-----------------*/
+}
+
+.repo-name img,
+.read-me .card-header img {
+  margin-right: 0.39em;
+}
+.repo-desc {
+  margin-bottom: 1.5em;
+}
+.read-me {
+  margin-top: 2em;
+}
+
+.read-me .card-header {
+  padding: 0.5rem 0.5rem 0.4rem 0.5rem;
+}

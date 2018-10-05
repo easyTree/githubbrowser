@@ -1,0 +1,33 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "name": "vscode-jest-tests",
+      "request": "launch",
+      "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/react-scripts",
+      "args": [
+        "test",
+        "--env=jsdom",
+        "--runInBand"
+      ],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "protocol": "inspector",
+      "internalConsoleOptions": "neverOpen"
+    },
+    {
+      "name": "Chrome Beta",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:3000/",
+      "port": 9223,
+      "runtimeExecutable": "C:\\Program Files (x86)\\Google\\Chrome Beta\\Application\\chrome.exe",
+      "runtimeArgs": [
+        "--new-window",
+        "--remote-debugging-port=9223"
+      ],
+      "webRoot": "${workspaceRoot}/app/"
+    }
+  ]
+}
