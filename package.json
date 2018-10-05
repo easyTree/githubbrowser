@@ -1,5 +1,5 @@
 {
-  "name": "linkedinbrowser",
+  "name": "githubbrowser",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -27,5 +27,5 @@
     "@types/jest": "23.3.2",
     "babel-plugin-root-import": "6.1.0"
   },
-  "homepage": "http://easyTree.github.io/linkedinbrowser"
+  "homepage": "http://easyTree.github.io/githubbrowser"
 }
