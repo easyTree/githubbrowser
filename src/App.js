@@ -223,7 +223,7 @@ class App extends Component {
             <DetailView>
               {this.itemIndex && (
                 <Route
-                  path="/repo/*"
+                  path="repo/*"
                   render={() => {
                     return (
                       urlRepo
