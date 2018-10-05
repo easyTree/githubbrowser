@@ -1,8 +1,8 @@
-## [githubbrowser](https://github.com/easyTree/githubbrowser)
+## <a href='https://github.com/easyTree/githubbrowser' target='_blank'>githubbrowser</a>
 
 Sandbox project which interacts with the GitHub API to allow browsing of repositories by name.
 
-[Open githubbrowser now](https://easytree.github.io/githubbrowser/)
+<a href='https://easytree.github.io/githubbrowser' target='_blank'>Open githubbrowser now</a>
 
 ![Screenshot of githubbrowser](docs/githubbrowser_screenshot.png)
 
