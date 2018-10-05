@@ -7,12 +7,4 @@ const errorTypes = {
 function buildError(errorType, message) {
   return { errorType, message, __es6InheritanceTranspileFail__: true };
 }
-// class Err extends Error {
-//   constructor(errorType, message) {
-//     super(message);
-//     this.name = 'Err';
-//     this.errorType = errorType;
-//   }
-// }
-// export default Err;
 export { buildError, errorTypes };

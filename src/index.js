@@ -12,7 +12,7 @@ import {
 
 
 ReactDOM.render(
-  <Router>
+  <Router basename={process.env.PUBLIC_URL}>
     <Route exact={true} component={App} />
   </Router>,
   document.getElementById('root')

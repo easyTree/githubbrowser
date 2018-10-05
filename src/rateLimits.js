@@ -29,8 +29,8 @@ class RateLimits extends Component {
     }
   }
   componentDidUpdate(prevProps, prevState) {
-    if (this.props.showPopover 
-      && !this.state.popoverOpen 
+    if (this.props.showPopover
+      && !this.state.popoverOpen
       && !this.state.lockedOpen
       && !prevProps.showPopover
     ) {
@@ -42,13 +42,7 @@ class RateLimits extends Component {
     this.setState((state, props) => ({
       lockedOpen: !state.lockedOpen,
       popoverOpen: !state.lockedOpen
-    })
-      // , () => {
-      //   if (!this.state.lockedOpen) {
-      //     this.props.limitsUiClosed();
-      //   }
-      // }
-    );
+    }));
   }
   toggle() {
     this.setState((state, props) => ({ popoverOpen: !state.popoverOpen }));

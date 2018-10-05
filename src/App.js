@@ -189,8 +189,6 @@ class App extends Component {
     this.setState((state, props) => ({ showColours: !state.showColours }));
   }
   render() {
-    // const { resultSet } = this.state;
-    // const { items } = resultSet;
     const urlRepo = this.getUrlRepo(this.getUrlRepoId());
 
     return (
