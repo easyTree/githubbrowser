@@ -1,6 +1,6 @@
 ## [githubbrowser](https://github.com/easyTree/githubbrowser)
 
-Sandbox project which interacts with the GitHub API to allow browsing of repositories by name.
+Sandbox project which interacts with the GitHub API to allow searching and browsing of repositories.
 
 [Open githubbrowser now](https://easytree.github.io/githubbrowser)
 
