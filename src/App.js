@@ -145,7 +145,7 @@ class App extends Component {
 
   getUrlRepoId() {
     const match = matchPath(this.props.location.pathname, {
-      path: '/repo/*',
+      path: 'repo/*',
       exact: true,
       strict: false
     });
