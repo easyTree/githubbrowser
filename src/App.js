@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {
   Route
 } from 'react-router-dom';
-import Debug from 'debug';
 
 import './App.css';
 import github from './icons/github.svg';
@@ -27,7 +26,6 @@ import MessageBox from './messageBox';
 import { buildError, errorTypes } from './err';
 import { matchPath } from 'react-router';
 
-const debug = Debug('app:app');
 
 class App extends Component {
   constructor(props) {
@@ -107,22 +105,22 @@ class App extends Component {
     return !!this.itemIndex[index];
   }
   loadRows({ startIndex, stopIndex }, callback) {
-    debug(`loadRows({startIndex: ${startIndex}, stopIndex: ${stopIndex}}`);
+    console.log(`loadRows({startIndex: ${startIndex}, stopIndex: ${stopIndex}}`);
     const count = stopIndex - startIndex + 1;
     if (count > this.pageSize) {
       const msg = `rows ${startIndex}-${stopIndex}=${count}. We may not request more than one page (${this.pageSize}) of repos. `;
-      debug(msg);
+      console.log(msg);
       stopIndex = startIndex + this.pageSize - 1;
-      debug(`rewriting stopIndex to ${stopIndex}`);
+      console.log(`rewriting stopIndex to ${stopIndex}`);
     }
     const startPage = getPageIndex(startIndex, this.pageSize);
     const stopPage = getPageIndex(stopIndex, this.pageSize);
     if (startPage !== stopPage) {
       const msg = `startPage: ${startPage} !== stopPage: ${stopPage}. We may not request more than one page at once.`;
-      debug(msg);
+      console.log(msg);
       const indices = getPageIndices(startPage, this.pageSize);
       stopIndex = indices.to;
-      debug(`rewriting stopIndex to ${stopIndex}`);
+      console.log(`rewriting stopIndex to ${stopIndex}`);
     }
 
     const { searchTerm } = this.state;
