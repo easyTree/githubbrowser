@@ -1,4 +1,12 @@
-import { updateLookup, objectFind, getPageIndex, getPageIndices, objectMap } from './utils';
+import {
+  updateLookup,
+  objectFind,
+  getPageIndex,
+  getPageIndices,
+  objectMap,
+  b64EncodeUnicode,
+  b64DecodeUnicode
+} from './utils';
 
 it('Can build the index', () => {
   const items1 = [{ id: 0, name: 'a' }, { id: 1, name: 'b' }];
@@ -69,6 +77,19 @@ it('Can get the associated page', () => {
   const actual = JSON.stringify(objectMap(mapping, (k, v) => getPageIndex(k, pageSize)), null, 2)
 
   expect(actual).toEqual(expected)
+})
+
+it('Can base64-encode utf-8', () => {
+  expect(b64EncodeUnicode('✓ à la mode')).toEqual('4pyTIMOgIGxhIG1vZGU=')
+})
+
+it('Can base64-decode utf-8', () => {
+  expect(b64DecodeUnicode('4pyTIMOgIGxhIG1vZGU=')).toEqual('✓ à la mode')
+})
+
+it('Can roundtrip utf-8 through base64', () => {
+  const start = '✓ à la mode'
+  expect(b64DecodeUnicode(b64EncodeUnicode(start))).toEqual(start)
 })
 
 it('Can get the indices for a particular page', () => {

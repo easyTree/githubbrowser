@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { getRepoUrl, fetchData } from './utils';
+import { getRepoUrl, fetchData, b64DecodeUnicode } from './utils';
 import readme from './icons/readme.svg';
 import {
   Card,
@@ -33,11 +33,13 @@ class ReadMe extends Component {
         const params = {
           method: 'POST',
           headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
+            'Accept': 'text/html',
+            'Accept-Charset': 'utf-8',
+            'Content-Type': 'application/json',
+            
           },
           body: JSON.stringify({
-            text: atob(readMe.content),
+            text: b64DecodeUnicode(readMe.content),
             mode: 'gfm',
             context: `${repo.owner.login}/${repo.name}`
           })

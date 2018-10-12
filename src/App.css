@@ -121,6 +121,7 @@ body {
 .popover .limits.expired {
   background-color: red;
   color: white;
+  padding: 0 7px;
 }
 .popover table.limit-data {
   border-collapse: collapse;
