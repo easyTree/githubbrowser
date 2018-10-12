@@ -1,8 +1,8 @@
 ## [githubbrowser](https://github.com/easyTree/githubbrowser)
 
-Sandbox project which interacts with the GitHub API to allow browsing of repositories by name.
+Sandbox project which interacts with the GitHub API to allow searching and browsing of repositories.
 
-[Open githubbrowser now](https://easytree.github.io/githubbrowser/)
+[Open githubbrowser now](https://easytree.github.io/githubbrowser)
 
 ![Screenshot of githubbrowser](docs/githubbrowser_screenshot.png)
 
@@ -27,6 +27,16 @@ Sandbox project which interacts with the GitHub API to allow browsing of reposit
   - Forks
 
 are clickable; they, as well as the repository-name header and all links within the README.md open in new browser tabs.
+
+---
+
+##### Issues / problems
+  - Random-access seeking through the list using the scroll-thumb -> crash
+  - Not responsive - so, no mobile view :/
+  - Should perhaps hide the view pane when the API credit has expired
+  - Best viewed in Chrome; the vertical scrollbar is broken in Firefox and Edge
+  - Perhaps infinite-/lazy-loaded list wasn't the way to go from a user experience perspective; paging?
+
 
 
 
