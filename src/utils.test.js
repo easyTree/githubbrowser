@@ -1,4 +1,4 @@
-import { updateLookup, objectFind, getPageIndex, objectMap } from './utils';
+import { updateLookup, objectFind, getPageIndex, getPageIndices, objectMap } from './utils';
 
 it('Can build the index', () => {
   const items1 = [{ id: 0, name: 'a' }, { id: 1, name: 'b' }];
@@ -67,6 +67,19 @@ it('Can get the associated page', () => {
   }
   const expected = JSON.stringify(mapping, null, 2)
   const actual = JSON.stringify(objectMap(mapping, (k, v) => getPageIndex(k, pageSize)), null, 2)
+
+  expect(actual).toEqual(expected)
+})
+
+it('Can get the indices for a particular page', () => {
+  const pageSize = 4;
+  const mapping = {
+    1: { from: 0, to: 3},
+    2: { from: 4, to: 7},
+    3: { from: 8, to: 11},
+  }
+  const expected = JSON.stringify(mapping, null, 2)
+  const actual = JSON.stringify(objectMap(mapping, (k, v) => getPageIndices(k, pageSize)), null, 2)
 
   expect(actual).toEqual(expected)
 })

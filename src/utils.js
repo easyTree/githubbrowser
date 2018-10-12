@@ -73,6 +73,12 @@ export function pascalCase(str) {
 export function getPageIndex(index, pageSize) {
   return Math.ceil((Number(index) + 1) / pageSize)
 }
+export function getPageIndices(pageIndex, pageSize) {
+  return {
+    from: (pageIndex - 1) * pageSize,
+    to: pageIndex * pageSize - 1
+  };
+}
 
 function getFakeData(addr) {
   const fakeData = false
