@@ -36,7 +36,7 @@ are clickable; they, as well as the repository-name header and all links within 
   - Should perhaps hide the view pane when the API credit has expired
   - Best viewed in Chrome; the vertical scrollbar is broken in Firefox and Edge
   - Perhaps infinite-/lazy-loaded list wasn't the way to go from a user experience perspective; paging?
-  - Encoding issues when viewing some repos
+  - ~~Encoding issues when viewing some repos~~
 
 
 
