@@ -104,19 +104,19 @@ class App extends Component {
     return !!this.itemIndex[index];
   }
   loadRows({ startIndex, stopIndex }, callback) {
-    // console.log(`loadRows({startIndex: ${startIndex}, stopIndex: ${stopIndex}}`);
+    console.log(`loadRows({startIndex: ${startIndex}, stopIndex: ${stopIndex}}`);
     const count = stopIndex - startIndex + 1;
     if (count > this.pageSize) {
-      // const msg = `rows ${startIndex}-${stopIndex}=${count}. We may not request more than one page (${this.pageSize}) of repos. `;
-      // console.log(msg);
+      const msg = `rows ${startIndex}-${stopIndex}=${count}. We may not request more than one page (${this.pageSize}) of repos. `;
+      console.log(msg);
       stopIndex = startIndex + this.pageSize - 1;
-      // console.log(`rewriting stopIndex to ${stopIndex}`);
+      console.log(`rewriting stopIndex to ${stopIndex}`);
       // throw Error(msg)
     }
     const startPage = getPageIndex(startIndex, this.pageSize);
     const stopPage = getPageIndex(stopIndex, this.pageSize);
     if (startPage !== stopPage) {
-      throw Error(`startPage: ${startPage} 1== stopPage: ${stopPage}. We may not request more than one page at once.`)
+      throw Error(`startPage: ${startPage} !== stopPage: ${stopPage}. We may not request more than one page at once.`)
     }
 
     const { searchTerm } = this.state;
