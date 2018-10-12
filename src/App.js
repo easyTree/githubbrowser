@@ -31,6 +31,7 @@ class App extends Component {
     super(props);
     this.state = {
       totalCount: 0,
+      usableCount: 0,
       searchTerm: 'react',
       latestRateLimits: {},
       showColours: false,
@@ -63,9 +64,6 @@ class App extends Component {
     if (res.status === 403 && latestRateLimits.remaining === 0) {
       const err = buildError(errorTypes.apiRateLimited);
       throw err;
-    }
-    else if (res.status === 304) {
-      alert('304!!!')
     }
     else if (!res.ok) {
       const err = buildError(errorTypes.other, `Status: ${res.status}\nStatusText: ${res.statusText}`);
@@ -106,9 +104,14 @@ class App extends Component {
     return !!this.itemIndex[index];
   }
   loadRows({ startIndex, stopIndex }, callback) {
+    console.log(`loadRows({startIndex: ${startIndex}, stopIndex: ${stopIndex}}`);
     const count = stopIndex - startIndex + 1;
     if (count > this.pageSize) {
-      throw Error(`rows ${startIndex}-${stopIndex}=${count}. We may not request more than one page (${this.pageSize}) of repos. `)
+      const msg = `rows ${startIndex}-${stopIndex}=${count}. We may not request more than one page (${this.pageSize}) of repos. `;
+      console.log(msg);
+      stopIndex = startIndex + this.pageSize - 1;
+      console.log(`rewriting stopIndex to ${stopIndex}`);
+      // throw Error(msg)
     }
     const startPage = getPageIndex(startIndex, this.pageSize);
     const stopPage = getPageIndex(stopIndex, this.pageSize);
@@ -124,6 +127,7 @@ class App extends Component {
         updateLookup(resultSet.items, this.itemIndex, startIndex);
         this.setState((state, props) => ({
           totalCount: resultSet.total_count,
+          usableCount: Math.min(1000, resultSet.total_count)
         }), callback);
       })
       .catch(this.handleErrors);
@@ -180,7 +184,7 @@ class App extends Component {
     if (this.loaderRef.current) {
       this.loaderRef.current.resetLoadMoreRowsCache();
     }
-    this.setState((state, props) => ({ totalCount: 0 }), () => {
+    this.setState((state, props) => ({ totalCount: 0, usableCount: 0 }), () => {
       this.doSearch();
     });
   }
@@ -211,7 +215,7 @@ class App extends Component {
           </Header>
           <PageContainer>
             <NavList2
-              remoteRowCount={this.state.totalCount}
+              remoteRowCount={this.state.usableCount}
               list={this.itemIndex}
               isRowLoaded={this.isRowLoaded}
               loadMoreRows={this.loadRows}

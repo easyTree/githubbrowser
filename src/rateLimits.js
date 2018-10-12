@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import moment from 'moment';
+
+
 import { Badge, Button, Popover, PopoverHeader, PopoverBody } from 'reactstrap';
 import {
   getRateLimitUrl,
@@ -9,6 +11,11 @@ import {
   fetchData
 } from './utils';
 import { withHelpers } from './withHelpers';
+
+moment.relativeTimeThreshold('s', 60);
+moment.relativeTimeThreshold('ss', 1);
+moment.relativeTimeThreshold('m', 60);
+moment.relativeTimeThreshold('h', 24);
 
 class RateLimits extends Component {
   constructor(props) {

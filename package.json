@@ -21,11 +21,14 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "prepare": "patch-package"
   },
   "devDependencies": {
     "@types/jest": "23.3.2",
-    "babel-plugin-root-import": "6.1.0"
+    "babel-plugin-root-import": "6.1.0",
+    "patch-package": "5.1.1",
+    "postinstall-prepare": "1.0.1"
   },
   "homepage": "http://easyTree.github.io/githubbrowser"
 }
